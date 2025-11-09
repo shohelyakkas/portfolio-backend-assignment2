@@ -1,0 +1,95 @@
+.main-navigation {
+    background-color: #3f4771;
+    padding: 0;
+    margin: 20px auto;
+    /* center the whole bar and add a little vertical spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    /* limit the bar width so it sits centered */
+    border-radius: 6px;
+    /* optional: soft corners look nicer when not full width */
+    overflow: hidden;
+
+}
+
+.nav-container {
+    width: 100%;
+    /* Limit content width so brand and links sit closer together and the bar is centered */
+    max-width: 900px;
+    margin: 0 auto;
+    /* center the nav container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    /* smaller horizontal padding to reduce extra space */
+    font-size: 1.3rem;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    gap: 8px;
+    /* slightly smaller gap between icon and text */
+}
+
+.brand-icon {
+    font-size: 1.8rem;
+}
+
+.brand-text {
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    /* reduce spacing between link items */
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    padding: 8px 0;
+}
+
+.nav-links a:hover {
+    color: #ff4081;
+}
+
+.nav-links a.active {
+    color: #ff4081;
+    border-bottom: 2px solid #ff4081;
+}
+
+.signout-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 8px 0;
+}
+
+.signout-btn:hover {
+    color: #ff4081;
+}

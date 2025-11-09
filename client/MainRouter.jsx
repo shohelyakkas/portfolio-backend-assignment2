@@ -1,45 +1,73 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignInForm from './components/SignInForm';
+import SignUpForm from './components/SignUpForm';
+import EducationForm from './components/EducationForm';
+import ProjectForm from './components/ProjectForm';
+import ContactForm from './components/ContactForm';
+import AdminPanel from './components/AdminPanel';
+import Home from './components/Home';
+import UserView from './components/UserView';
+import ProtectedRoute from './components/ProtectedRoute';
+import Users from './components/Users';
+import Profile from './components/Profile';
 
-/*
-  File: MainRouter.jsx
-  Student: Shohely Akkas
-  Student ID: 301257632
-  Date: Sept 24, 2025
-  Description: This file contains the routing configuration and layout structure for the portfolio site.
-*/
-
-/* ===== IMPORTS ===== */
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
-import About from './src/about'
-import Contact from './src/contact'
-import Project from './src/project'
-import Layout from './components/Layout'
-import Services from './src/services'
-
-/* ===== MAIN ROUTER COMPONENT ===== */
-const MainRouter = () => {
-    /* ----- Component JSX Structure ----- */
+function MainRouter() {
     return (
-        <div>
-            {/* Layout Component - Contains Header, Logo, and Navigation */}
-            <Layout />
-
-            {/* Route Configuration */}
+        <Router>
             <Routes>
-                {/* Home Route */}
-                <Route exact path="/" element={<Home />} />
-                {/* About Route */}
-                <Route exact path="/about" element={<About />} />
-                {/* Services Route */}
-                <Route exact path="/services" element={<Services />} />
-                {/* Projects Route */}
-                <Route exact path="/project" element={<Project />} />
-                {/* Contact Route */}
-                <Route exact path="/contact" element={<Contact />} />
+                {/* Public routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/signin" element={<SignInForm />} />
+                <Route path="/signup" element={<SignUpForm />} />
+                <Route path="/users" element={<Users />} />
+                <Route path="/portfolio" element={<UserView />} />
+
+                {/* Protected routes for authenticated users */}
+                <Route
+                    path="/profile"
+                    element={
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/education"
+                    element={
+                        <ProtectedRoute>
+                            <EducationForm />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/project"
+                    element={
+                        <ProtectedRoute>
+                            <ProjectForm />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/contact"
+                    element={
+                        <ProtectedRoute>
+                            <ContactForm />
+                        </ProtectedRoute>
+                    }
+                />
+
+                {/* Admin-only route */}
+                <Route
+                    path="/admin"
+                    element={
+                        <ProtectedRoute role="admin">
+                            <AdminPanel />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
-        </div>
-    )
+        </Router>
+    );
 }
 
-export default MainRouter
+export default MainRouter;

@@ -1,0 +1,69 @@
+.profile-title {
+    color: #ff4081;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.profile-content {
+    margin-top: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.user-email {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.edit-btn {
+    color: #3f4771;
+}
+
+.delete-btn {
+    color: #ff4081;
+}
+
+.profile-detail {
+    padding-top: 20px;
+}
+
+.joined-text {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
